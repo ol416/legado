@@ -39,7 +39,6 @@ jobs:
 
       # 只有当你配置了密钥时，这一步才会去给 APK 签名；没配置就直接跳过，生成 debug/无签名版，不会卡死整个流程
       - name: Release Apk Sign
-        if: ${{ secrets.RELEASE_KEY_STORE != '' }}
         env:
           RS_FILE: ${{ secrets.RELEASE_KEY_STORE }}
           RS_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
